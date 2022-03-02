@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+    <title>Course</title>
+    <link rel="stylesheet" href="{% static 'css/course.css' %}">
+{% endblock %}
+{% block main %}
+<section id = 'main'>
+    <h1>Course Name</h1>
+    <section id = 'section1'>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{course.title}}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{course.duration}}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{course.description}}
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section id = 'section2'>
+        <h1>Topics</h1>
+        <ul>
+        {% for topic in course.topic_set.all %}
+            <li><a href="{{topic.get_absolute_url}}">{{topic.title}}</a></li>
+        </ul>
+        {% endfor %}
+    </section>
+</section>
+{% endblock %}

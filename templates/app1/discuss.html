@@ -1,0 +1,25 @@
+{% block header %}
+{% load static %}
+<title>Discusion</title>
+<link rel="stylesheet" href="{% static 'css/discuss.css' %}">
+{% endblock %}
+{% block main %}
+    <section id="discussion">
+        <h1>Topic Name</h1>
+        <div class="commenting">
+           
+            <h3>Discussion</h3>
+            <div class="container">
+                <textarea id="newComment" placeholder="type your comment"></textarea>
+                <button id="addComments">Post Comment</button>
+                <h2>Comments:</h2>
+                <div id="allComments"></div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/discuss.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+<title>Topics</title>
+<link rel="stylesheet" href="{% static 'css/topics.css' %}">
+<link rel="stylesheet" href="{% static 'css/course.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+           <ul>
+            <li>
+                <a href="#" class="">
+                    <span class="item">Topic_1</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                     <span class="item">Topic_2</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_4</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                     <span class="item">Topic_5</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_6</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <span class="item">Topic_7</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="item">Topic_8</span>
+                </a>
+            </li>
+            <li>
+                <a></a>Topic_8</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section id = 'main'>
+        <h1>Topic Name</h1>
+        <section id = 'section1'>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{topic.title}}</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>{{topic.duration}}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{topic.description}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Likes</th>
+                    <td>{{topic.likes}}</td>
+                </tr>
+                <tr>
+                    <th>Course Name</th>
+                    <td>{{topic.course.title}}</td>
+                </tr>
+            </table>
+        </section>
+        <section id = 'section2'>
+            <ul>
+                <li><a href="{{topic.get_article_url}}">ARTICLE</a></li>
+                <li><a href="{{topic.get_video_url}}">VIDEO</a></li>
+                <li><a href="{{topic.get_quiz_url}}">QUIZ</a></li>
+                <li><a href="{{topic.get_discussion_url}}">DISCUSSION</a></li>
+            </ul>
+        </section>
+    </section>
+</div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function () {
+            $('.wrapper .sidebar ul li')
+                    .click(function (e) {
+                $('.wrapper .sidebar ul li')
+                    .removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+{% endblock %}

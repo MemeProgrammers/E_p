@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>SIGN UP</h1>
+      <form>
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" />
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password" />
+        <input type="submit" value="SUBMIT" />
+      </form>
+      <p class="para-2">
+        Have an account? <a href="login.html">Login</a> here
+      </p>
+    </div>
+   
+  </body>
+</html>

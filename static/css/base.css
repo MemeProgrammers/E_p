@@ -1,0 +1,64 @@
+*,*::before,*::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.navigation{
+    width:100%;
+    position:fixed;
+    top:0;
+    z-index:1;
+}
+
+main{
+    position:relative;
+    top:50px;
+}
+
+.navbar,.navitems {
+    display:flex;
+    justify-content: space-around;
+    align-content: center;
+    column-gap: 30px;
+}
+li {
+        list-style: none;
+}
+.navbar{
+    height:50px;
+    background-color:rgb(131, 3, 252);
+    color:white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:20px;
+    padding:10px;
+}
+.form_elements form {
+    height: 30px;
+}
+.listitems{
+    cursor: pointer;
+    justify-items: center;
+}
+.form_elements input[type='text'] {
+    width: 250px;
+    height:100%;
+    outline:none;
+    padding: 4px;
+}
+form input[type='submit']{
+    position:relative;
+    
+    left:-4%;
+    top:3%;
+    padding:0 4px;
+    font-weight: bold;
+    font-size:15px;
+    height:100%;
+}
+
+footer{
+    height:300px;
+    margin-top:50px;
+    background-color:rgb(5, 90, 76);
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% block header %}
+{% endblock %}
+</head>
+<body>
+    <section class="navigation">
+        <div class="navbar">
+            <div class="nav_elements">
+            <ul class="navitems">
+                <li class="listitems"><a href="{% url 'home' %}">Home</a></li>
+                <li class="listitems"><a href="{% url 'profile' %}">Profile</a></li>
+                <li class="listitems"><a href="{% url 'login' %}">Login</a></li>
+                <li class="listitems"><a href="{% url 'register' %}">SignUp</a></li>
+            </ul>
+        </div>
+        <div class="form_elements">
+            <form>
+                <input type="text" placeholder="search the course">
+                <input type="submit">
+            </form>
+        </div>
+        </div>
+    </section>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer>
+        
+    </footer>
+        {% block script %}
+        {% endblock %}
+</body>
+</html>

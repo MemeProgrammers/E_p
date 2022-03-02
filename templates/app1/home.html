@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block main %}
+    <section class="block_section">
+        <div>Welcome to Meme programmers</div>
+        <div class="image">
+            <img src='download.jpeg'>
+        </div>
+    </section>
+    <section class ='cards'>
+        <div class="courses_block">
+            {% for course in courses.object_list %}
+            <div class="course_names">
+                <div class="image">
+                    <img src="{{course.image.url}}">
+                </div>
+                <div class="name"><a href="{{course.get_absolute_url}}">{{course.title}}</a></div>
+                <div class="description">{{course.description}}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="pagination">
+        {% if courses.has_other_pages %}
+        <ul class = 'pagination'>
+            {% if courses.has_previous %}
+            <li><a href="?page={{courses.previous_page_number}}{% if request.GET.search %}&search={{request.GET.search}}{% endif %}">&laquo;</a></li>
+            {% else %}
+            <li class="disabled">&laquo;</li>
+            {% endif %}
+            <li>{{courses.number}} of {{courses.paginator.num_pages}}</li>
+            {% if courses.has_next %}
+            <li><a href="?page={{courses.next_page_number}}{% if request.GET.search %}&search={{request.GET.search}}{% endif %}">&raquo;</a></li>
+            {% else %}
+            <li class="disabled">&raquo;</li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </section>
+
+    {% endblock %}

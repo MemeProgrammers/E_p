@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quiz{
+
+            text-align: start;
+            width:400px;
+            margin:50px auto;
+            box-sizing:border-box;
+
+        }
+        .questions{
+            width: fit-content;
+            height:100%;
+            border-color: aquamarine;
+            color:red;
+        }
+        .options{
+            text-align:start;
+            display:grid;
+
+            width:200px;
+            height:100%;
+        }
+        #submit-button{
+            margin-top:5px;
+            border:none;
+            border:1px solid none;
+            background-color:aqua;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <section class="quiz">
+        <h1>MYQUIZ</h1>
+
+        <form>
+            <div class="questions">
+            <p>FIRST QUESTION:</p>
+            <div class="options">
+            <div><input type="radio"   
+            name="q"    id="id_1"
+   value="yes"> <label for = "id_1"> Reading   
+         </label> 
+        </div>
+    <div>
+     <input type="radio"   
+            name="q"   id="id_1"
+            value="yes"> <label for = "id_1"> Dancing   
+         </label>  
+        </div>
+    <div>
+     <input type="radio"   
+            name = "q"   id="id_1"
+            value ="yes"> <label for = "id_1"> Singing   
+         </label> 
+        </div>
+    <div>
+  <input type="radio"   
+         name = "q"   id="id_1"
+            value = "yes"> <label for = "id_1"> Coin Collecting  
+              </label>
+            </div>
+            </div>
+            <p>second QUESTION:</p>
+            <div class="options">
+            <div><input type="checkbox"   
+            name="reading"   
+   value="yes"> <label for = "Reading"> Reading   
+         </label> 
+        </div>
+    <div>
+     <input type="radio"   
+            name="p"   
+            value="yes"> <label for = "Dancing"> Dancing   
+         </label>  
+        </div>
+    <div>
+     <input type="radio"   
+            name = "p"   
+            value ="yes"> <label for = "Singing"> Singing   
+         </label> 
+        </div>
+    <div>
+  <input type="radio"   
+         name = "p"   
+            value = "yes"> <label for = "collecting"> Coin Collecting  
+              </label>
+            </div>
+            </div>
+            <button id="submit-button">Submit Answers</button>
+        </div>
+        </form>
+    </section>
+
+
+    {% for quiz in quizes %}
+    
+    {% endfor %}
+</body>
+</html>
